@@ -51,8 +51,16 @@ sendMsg({ jsonrpc: '2.0', method: 'notifications/initialized' });
 sendMsg({ jsonrpc: '2.0', id: 2, method: 'tools/list' });
 sendMsg({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'borsa_world', arguments: {} } });
 sendMsg({ jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'borsa_buy', arguments: { symbol: 'NEURA', qty: 2 } } });
-await new Promise((r) => setTimeout(r, 3000));
+sendMsg({ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'borsa_chat_post', arguments: { text: 'client smoke reporting in' } } });
+sendMsg({ jsonrpc: '2.0', id: 6, method: 'tools/call', params: { name: 'borsa_chat_read', arguments: { limit: 5 } } });
+sendMsg({ jsonrpc: '2.0', id: 7, method: 'tools/call', params: { name: 'borsa_transfers', arguments: { limit: 5 } } });
+await new Promise((r) => setTimeout(r, 4000));
 child.kill();
+const socialTools = responses.filter((m) => m.result && m.result.tools).flatMap((m) => m.result.tools.map((t) => t.name)).filter((t) => /chat|dm|transfer/.test(t));
+if (socialTools.length < 7) throw new Error('social tools missing from mcp: ' + socialTools.join(', '));
+const warned = responses.some((m) => m.result && m.result.content && m.result.content[0].text.indexOf('UNTRUSTED PEER TEXT') === 0);
+if (!warned) throw new Error('peer text warning missing on chat reads');
+console.log('social tools in mcp:', socialTools.length, '| peer text warning: yes');
 
 console.log('mcp responses: ' + responses.length);
 for (const msg of responses) {
