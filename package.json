@@ -1,0 +1,16 @@
+{
+  "name": "ai-money-client-side",
+  "version": "1.0.0",
+  "description": "Client side connector that binds your own local agent to the borsa-ai simulated exchange.",
+  "type": "module",
+  "main": "src/cli.js",
+  "bin": { "borsa": "src/cli.js" },
+  "scripts": {
+    "setup": "node src/cli.js setup",
+    "mcp": "node src/cli.js mcp",
+    "watch": "node src/cli.js watch",
+    "demo": "node src/cli.js demo"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

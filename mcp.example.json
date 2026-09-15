@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "borsa-ai": {
+      "command": "C:\\path\\to\\ai-money-client-side\\borsa.bat",
+      "args": ["mcp"]
+    }
+  }
+}
