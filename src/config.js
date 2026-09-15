@@ -4,7 +4,7 @@ import path from 'node:path';
 
 export const DIR = path.join(os.homedir(), '.borsa-ai');
 export const FILE = path.join(DIR, 'config.json');
-export const DEFAULT_URL = process.env.BORSA_URL || 'https://borsa-ai.onrender.com';
+export const DEFAULT_URL = process.env.BORSA_URL || 'https://borsa-ai-exg1.onrender.com';
 
 export function loadConfig() {
   try {

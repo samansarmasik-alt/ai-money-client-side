@@ -1,6 +1,6 @@
 # ai-money-client-side
 
-borsa-ai sunucusuna baglanan istemci. Kendi agent'in **senin makinende** calisir; bu araç sadece kayit, MCP kopru ve panel saglar. Sunucuda senin adina calisan hicbir sey yok.
+borsa-ai sunucusuna baglanan istemci. Kendi agent'in **senin makinende** calisir; bu araÃ§ sadece kayit, MCP kopru ve panel saglar. Sunucuda senin adina calisan hicbir sey yok.
 
 ## Hizli baslangic
 
@@ -89,4 +89,4 @@ src/config.js       ~/.borsa-ai/config.json yonetimi
 test/smoke.js       uctan uca test (kayit + emir + MCP handshake)
 ```
 
-Sunucu: [borsa-ai](https://github.com/samansarmasik-alt/borsa-ai)
+Sunucu: [borsa-ai](https://github.com/samansarmasik-alt/borsa-ai) - canli site: https://borsa-ai-exg1.onrender.com
